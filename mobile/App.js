@@ -5,6 +5,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, StatusBar, Platform } from 'react-native';
 
+// IMPORTANT: ADDED NEW CODE - PALEE
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ActivityIndicator } from 'react-native';
+
 // Import all screen components
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
@@ -172,6 +178,26 @@ const AppNavigator = () => {
         </NavigationContainer>
     );
 };
+
+// IMPORTANT: added new code - Palee
+const styles = StyleSheet.create({
+    bottomNav: {
+        backgroundColor: '#ffffff',
+        borderTopColor: '#dddddd',
+        height: 60,
+    },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    errorText: {
+        color: 'red',
+        marginBottom: 12,
+        textAlign: 'center',
+    },
+});
 
 export default function App() {
     return (
